@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util 
+   		   http://www.springframework.org/schema/util/spring-util.xsd">
+	<util:list id="greetList"
+		value-type="by.levchenko.SpringAppXmlConfig.bean.Greeting">
+		<ref bean="russianGreeting" />
+		<ref bean="englishGreeting" />
+		<ref bean="germanGreeting" />
+
+	</util:list>
+	<bean id="service"
+		class="by.levchenko.SpringAppXmlConfig.bean.Service">
+		<constructor-arg ref="writer"></constructor-arg>
+	</bean>
+	<bean id="writer"
+		class="by.levchenko.SpringAppXmlConfig.bean.ConsoleWriter">
+		<property name="message" value="Hello from spring config"></property>
+	</bean>
+
+	<bean id="greetingService"
+		class="by.levchenko.SpringAppXmlConfig.bean.GreetingService">
+		<property name="greetings" ref="greetList"></property>
+	</bean>
+	<bean id="russianGreeting"
+		class="by.levchenko.SpringAppXmlConfig.bean.RussianGreeting"></bean>
+	<bean id="englishGreeting"
+		class="by.levchenko.SpringAppXmlConfig.bean.EnglishGreeting"></bean>
+	<bean id="germanGreeting"
+		class="by.levchenko.SpringAppXmlConfig.bean.GermanGreeting"></bean>
+</beans> 
