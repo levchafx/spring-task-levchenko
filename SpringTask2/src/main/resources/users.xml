@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/util 
+   		   http://www.springframework.org/schema/util/spring-util.xsd"
+	default-destroy-method="destroy">
+	 <context:property-placeholder location="classpath:user.properties"></context:property-placeholder>
+	
+	<util:list id="users"
+		value-type="by.levchenko.SpringTask2.User" >
+		<ref bean="user1" />
+		<ref bean="user2" />
+		<ref bean="user3" />
+
+	</util:list>
+	<bean id="user1" class="by.levchenko.SpringTask2.User" p:id="${id1}"
+		p:name="${name1}" p:age="${age1}" p:email="${email1}"></bean>
+	<bean id="user2" class="by.levchenko.SpringTask2.User" p:id="${id2}"
+		p:name="${name2}" p:age="${age2}" p:email="${email2}"></bean>
+	<bean id="user3" class="by.levchenko.SpringTask2.User" p:id="${id3}"
+		p:name="${name3}" p:age="${age3}" p:email="${email3}"></bean>
+		</beans>
