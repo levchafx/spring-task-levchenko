@@ -17,4 +17,10 @@ public interface EventDao extends CrudDao<Event> {
 	List<Event> getByAuditorium(Auditorium auditorium);
 
 	List<Event> getUpcomingEvents(Date date);
+
+	List<Event> getByName(String name);
+
+	Event getEventWithAvailableSeats(int id);
+
+	Event getEventWithTicketsSoldAndAvailableSeats(int id);
 }
