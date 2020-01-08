@@ -9,7 +9,6 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import by.levchenko.TicketService.dao.BookingDao;
 import by.levchenko.TicketService.dao.EventDao;
 import by.levchenko.TicketService.dao.TicketDao;
 import by.levchenko.TicketService.domain.Event;
@@ -22,8 +21,7 @@ import by.levchenko.TicketService.domain.User;
 public class BookingService {
 	@Autowired
 	DiscountService discountService;
-	@Autowired
-	BookingDao bookingDao;
+
 	@Autowired
 	TicketDao ticketDao;
 	@Autowired
