@@ -1,4 +1,4 @@
-package aspect;
+package by.levchenko.TicketService.aspect;
 
 import java.util.Random;
 

@@ -1,4 +1,5 @@
-package runner;
+package by.levchenko.TicketService.runner;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashSet;
