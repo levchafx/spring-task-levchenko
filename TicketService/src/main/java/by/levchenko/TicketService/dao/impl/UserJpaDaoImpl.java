@@ -25,14 +25,14 @@ public class UserJpaDaoImpl extends AbstractJpaDao<User> implements UserDao {
 	@Override
 	public User getByEmail(String email) {
 
-		return em.createQuery("select u from User u where u.email = :email", User.class).setParameter("email", email)
+		return em.createQuery("from User  where email = :email", User.class).setParameter("email", email)
 				.getSingleResult();
 	}
 
 	@Override
 	public User getByLogin(String login) {
 
-		return em.createQuery("select u from User u where u.login = :login", User.class).setParameter("login", login)
+		return em.createQuery("from User  where login = :login", User.class).setParameter("login", login)
 				.getSingleResult();
 	}
 

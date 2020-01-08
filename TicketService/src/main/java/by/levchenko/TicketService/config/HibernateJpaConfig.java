@@ -38,7 +38,7 @@ public class HibernateJpaConfig {
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
 		em.setJpaProperties(additionalProperties());
-		em.setPackagesToScan("by.levchenko.TicketService");
+		em.setPackagesToScan("by.levchenko.TicketService.domain");
 		em.setPersistenceUnitName("name");
 		return em;
 	}

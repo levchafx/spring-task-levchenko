@@ -80,8 +80,9 @@ public class Runner {
 			bs.bookTickets(ticket, ticket.getUser());
 
 		}
-		eventDao.getByName("Rambo").forEach(System.out::println);
 
+		eventDao.getByName("Rambo").forEach(System.out::println);
+		ad.getAll().forEach(System.out::println);
 		ticketDao.getTicketsForUser(1).forEach(System.out::println);
 		System.out.println(counterDao.discountForUserCounter("luckyWinnerDiscount", 1));
 		counterDao.getAll().forEach(System.out::println);

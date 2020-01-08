@@ -18,8 +18,8 @@ public class AuditoriumJpaDaoImpl extends AbstractJpaDao<Auditorium> implements 
 
 	@Override
 	public Auditorium getByName(String name) {
-		Auditorium a = em.createQuery("select a from Auditorium where a.name=:name", Auditorium.class)
-				.setParameter("name", name).getSingleResult();
+		Auditorium a = em.createQuery("from Auditorium where name=:name", Auditorium.class).setParameter("name", name)
+				.getSingleResult();
 		return a;
 	}
 
