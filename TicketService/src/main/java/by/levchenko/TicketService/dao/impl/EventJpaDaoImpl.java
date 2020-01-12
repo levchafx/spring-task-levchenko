@@ -6,23 +6,18 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Repository;
-
+import by.levchenko.TicketService.annotations.DaoQualifier;
 import by.levchenko.TicketService.dao.AbstractJpaDao;
 import by.levchenko.TicketService.dao.EventDao;
 import by.levchenko.TicketService.domain.Auditorium;
 import by.levchenko.TicketService.domain.Event;
 import by.levchenko.TicketService.domain.Rating;
 
-@Repository
-@Primary
-@Transactional
+@DaoQualifier
 public class EventJpaDaoImpl extends AbstractJpaDao<Event> implements EventDao {
 	@PersistenceContext
-	EntityManager em;
+	private EntityManager em;
 
 	@Override
 	public Event getEventWithAvailableSeats(int id) {

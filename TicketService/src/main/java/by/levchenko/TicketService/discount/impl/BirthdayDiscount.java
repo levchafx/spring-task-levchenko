@@ -1,8 +1,9 @@
-package by.levchenko.TicketService.discount;
+package by.levchenko.TicketService.discount.impl;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 
+import by.levchenko.TicketService.discount.DiscountStrategy;
 import by.levchenko.TicketService.domain.Event;
 import by.levchenko.TicketService.domain.User;
 

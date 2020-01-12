@@ -4,20 +4,14 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Repository;
-
+import by.levchenko.TicketService.annotations.DaoQualifier;
 import by.levchenko.TicketService.dao.AbstractJpaDao;
 import by.levchenko.TicketService.dao.TicketDao;
 import by.levchenko.TicketService.domain.Ticket;
 
-@Repository
-@Primary
-@Transactional
+@DaoQualifier
 public class TicketJpaDaoImpl extends AbstractJpaDao<Ticket> implements TicketDao {
-
 	@PersistenceContext
 	private EntityManager em;
 

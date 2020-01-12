@@ -20,7 +20,7 @@ import by.levchenko.TicketService.domain.User;
 @Transactional
 public class BookingService {
 	@Autowired
-	DiscountService discountService;
+	private DiscountService discountService;
 
 	@Autowired
 	TicketDao ticketDao;

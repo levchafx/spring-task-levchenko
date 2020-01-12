@@ -13,7 +13,7 @@ import by.levchenko.TicketService.domain.User;
 public class DiscountService {
 	@Autowired
 
-	List<DiscountStrategy> discountStrategies;
+	private List<DiscountStrategy> discountStrategies;
 
 	public double getDiscount(User user, Event event) {
 		double totalDiscount = 0;

@@ -11,7 +11,7 @@ import javax.transaction.Transactional;
 public abstract class AbstractJpaDao<T extends Serializable> {
 
 	@PersistenceContext
-	EntityManager em;
+	private EntityManager em;
 
 	public abstract Class<T> getTClass();
 
@@ -50,4 +50,5 @@ public abstract class AbstractJpaDao<T extends Serializable> {
 
 		return t;
 	}
+
 }

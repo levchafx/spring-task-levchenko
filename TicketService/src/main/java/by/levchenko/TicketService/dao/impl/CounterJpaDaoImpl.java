@@ -2,19 +2,16 @@ package by.levchenko.TicketService.dao.impl;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 
-import org.springframework.stereotype.Component;
-
+import by.levchenko.TicketService.annotations.DaoQualifier;
 import by.levchenko.TicketService.dao.AbstractJpaDao;
 import by.levchenko.TicketService.dao.CounterDao;
 import by.levchenko.TicketService.domain.Counter;
 
-@Component
-@Transactional
+@DaoQualifier
 public class CounterJpaDaoImpl extends AbstractJpaDao<Counter> implements CounterDao {
 	@PersistenceContext
-	EntityManager em;
+	private EntityManager em;
 
 	@Override
 	public Counter accessEventByNameCounter(String name) {

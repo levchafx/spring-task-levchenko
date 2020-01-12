@@ -8,14 +8,8 @@ import java.util.Set;
 import javax.transaction.Transactional;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 
-import by.levchenko.TicketService.config.AspectConfig;
-import by.levchenko.TicketService.config.DiscountConfig;
-import by.levchenko.TicketService.config.HibernateJpaConfig;
-import by.levchenko.TicketService.config.LoggerConfig;
+import by.levchenko.TicketService.config.AppConfig;
 import by.levchenko.TicketService.dao.AuditoriumDao;
 import by.levchenko.TicketService.dao.CounterDao;
 import by.levchenko.TicketService.dao.EventDao;
@@ -27,16 +21,12 @@ import by.levchenko.TicketService.domain.Ticket;
 import by.levchenko.TicketService.domain.User;
 import by.levchenko.TicketService.service.BookingService;
 
-@Configuration
-
-@ComponentScan(basePackages = "by.levchenko.TicketService")
-@Import({ DiscountConfig.class, HibernateJpaConfig.class, AspectConfig.class, LoggerConfig.class })
 public class Runner {
 
 	@Transactional
 	public static void main(String[] args) throws ParseException {
 
-		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Runner.class);
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 		UserDao userDao = ctx.getBean(UserDao.class);
 		AuditoriumDao ad = ctx.getBean(AuditoriumDao.class);
 		EventDao eventDao = ctx.getBean(EventDao.class);

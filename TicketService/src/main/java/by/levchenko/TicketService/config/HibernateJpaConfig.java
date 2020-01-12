@@ -1,10 +1,13 @@
 package by.levchenko.TicketService.config;
 
+import java.sql.SQLException;
 import java.util.Properties;
 
+import javax.annotation.PostConstruct;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
+import org.h2.tools.Server;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -29,6 +32,16 @@ import com.zaxxer.hikari.HikariDataSource;
 public class HibernateJpaConfig {
 	@Autowired
 	Environment env;
+
+	@PostConstruct
+	public void init() {
+		final String[] args = new String[] { "-tcpPort", "8092", "-tcpAllowOthers", "true" };
+		try {
+			Server.createTcpServer(args).start();
+		} catch (SQLException e) {
+
+		}
+	}
 
 	@Bean
 
