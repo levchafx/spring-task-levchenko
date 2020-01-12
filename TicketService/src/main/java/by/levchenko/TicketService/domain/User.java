@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
-	private static volatile int counter = 0;
+
 	private int id;
 	private String name;
 	private String email;
@@ -19,12 +22,4 @@ public class User {
 	private Role role;
 	private List<Integer> tickets = new ArrayList<>();
 
-	public void getIdWithCounter() {
-		counter++;
-		this.id = counter;
-	}
-
-	public User() {
-		getIdWithCounter();
-	}
 }

@@ -3,12 +3,12 @@ package by.levchenko.TicketService.dao.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import by.levchenko.TicketService.dao.TicketDao;
 import by.levchenko.TicketService.domain.Ticket;
 
-@Component
+@Repository
 public class TicketDaoImpl implements TicketDao {
 	private static List<Ticket> tickets = new ArrayList<>();
 

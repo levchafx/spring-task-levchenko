@@ -3,24 +3,22 @@ package by.levchenko.TicketService.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import by.levchenko.TicketService.dao.BookingDao;
 import by.levchenko.TicketService.dao.EventDao;
-import by.levchenko.TicketService.dao.TicketDao;
 import by.levchenko.TicketService.domain.Ticket;
 import by.levchenko.TicketService.domain.User;
 
-@Component
+@Service
 public class BookingService {
 	@Autowired
-	DiscountService discountService;
+	private DiscountService discountService;
 	@Autowired
-	BookingDao bookingDao;
+	private BookingDao bookingDao;
+
 	@Autowired
-	TicketDao ticketDao;
-	@Autowired
-	EventDao eventDao;
+	private EventDao eventDao;
 
 	public Double getTicketPrice(Ticket t, User user) {
 		double finalPrice = bookingDao.getTicketPrice(t);

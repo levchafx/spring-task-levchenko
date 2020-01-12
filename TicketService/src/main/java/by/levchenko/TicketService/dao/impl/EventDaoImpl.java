@@ -5,14 +5,14 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import by.levchenko.TicketService.dao.EventDao;
 import by.levchenko.TicketService.domain.Auditorium;
 import by.levchenko.TicketService.domain.Event;
 import by.levchenko.TicketService.domain.Rating;
 
-@Component
+@Repository
 public class EventDaoImpl implements EventDao {
 	private static List<Event> events = new ArrayList<>();
 

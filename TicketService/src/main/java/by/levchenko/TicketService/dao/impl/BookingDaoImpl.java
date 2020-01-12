@@ -4,24 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import by.levchenko.TicketService.dao.BookingDao;
 import by.levchenko.TicketService.dao.EventDao;
 import by.levchenko.TicketService.dao.TicketDao;
-import by.levchenko.TicketService.dao.UserDao;
 import by.levchenko.TicketService.domain.Rating;
 import by.levchenko.TicketService.domain.Ticket;
 import by.levchenko.TicketService.domain.User;
 
-@Component
+@Repository
 public class BookingDaoImpl implements BookingDao {
 	@Autowired
-	TicketDao ticketDao;
+	private TicketDao ticketDao;
 	@Autowired
-	EventDao eventDao;
-	@Autowired
-	UserDao userDao;
+	private EventDao eventDao;
 
 	@Override
 	public double getTicketPrice(Ticket t) {

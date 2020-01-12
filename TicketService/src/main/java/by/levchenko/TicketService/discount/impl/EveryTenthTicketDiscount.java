@@ -1,5 +1,6 @@
-package by.levchenko.TicketService.discount;
+package by.levchenko.TicketService.discount.impl;
 
+import by.levchenko.TicketService.discount.DiscountStrategy;
 import by.levchenko.TicketService.domain.Event;
 import by.levchenko.TicketService.domain.User;
 

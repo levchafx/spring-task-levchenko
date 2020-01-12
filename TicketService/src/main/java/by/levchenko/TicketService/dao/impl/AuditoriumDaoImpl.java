@@ -3,12 +3,12 @@ package by.levchenko.TicketService.dao.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import by.levchenko.TicketService.dao.AuditoriumDao;
 import by.levchenko.TicketService.domain.Auditorium;
 
-@Component
+@Repository
 
 public class AuditoriumDaoImpl implements AuditoriumDao {
 
@@ -16,6 +16,7 @@ public class AuditoriumDaoImpl implements AuditoriumDao {
 
 	@Autowired
 	public AuditoriumDaoImpl(List<Auditorium> auditoriums) {
+
 		AuditoriumDaoImpl.auditoriums = auditoriums;
 	}
 
