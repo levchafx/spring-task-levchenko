@@ -5,8 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.transaction.Transactional;
-
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import by.levchenko.TicketService.config.AppConfig;
@@ -23,7 +21,6 @@ import by.levchenko.TicketService.service.BookingService;
 
 public class Runner {
 
-	@Transactional
 	public static void main(String[] args) throws ParseException {
 
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);

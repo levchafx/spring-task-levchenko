@@ -1,7 +1,5 @@
 package by.levchenko.TicketService.aspect;
 
-import javax.transaction.Transactional;
-
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -13,7 +11,7 @@ import by.levchenko.TicketService.domain.Counter;
 import by.levchenko.TicketService.domain.Ticket;
 
 @Aspect
-@Transactional
+
 public class CounterAspect {
 	@Autowired
 	CounterDao counterDao;

@@ -2,8 +2,6 @@ package by.levchenko.TicketService.service;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +24,6 @@ public class BookingService {
 	TicketDao ticketDao;
 	@Autowired
 	EventDao eventDao;
-	@PersistenceContext
-	EntityManager em;
 
 	public Double getTicketPrice(Ticket t, User user) {
 		double price = t.getEvent().getMsrp();
